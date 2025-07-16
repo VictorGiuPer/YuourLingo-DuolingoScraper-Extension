@@ -1,8 +1,12 @@
 import pandas as pd
 from vocabulary_choice import filtered_food
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
 
-genai.configure(api_key="AIzaSyDrKGFenMjGYeybKI3gyRl_skmrx2fqTNI")
+load_dotenv()
+
+genai.configure(api_key=os.getenv("gemini_key"))
 
 # Scenario Choice
 chosen_scenario = "Restaurant Visit with a Friend"
